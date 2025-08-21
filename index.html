@@ -8,18 +8,18 @@
   <meta name="author" content="Aida Laricchia" />
   <style>
     :root{
-      --bg:#0f172a; /* slate-900 */
-      --card:#111827ee; /* gray-900 */
-      --muted:#94a3b8; /* slate-400 */
-      --text:#e5e7eb; /* gray-200 */
-      --accent:#22d3ee; /* cyan-400 */
-      --accent2:#f59e0b; /* amber-500 */
+      --bg:#0f172a;
+      --card:#111827ee;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#22d3ee;
+      --accent2:#f59e0b;
       --ring: #22d3ee55;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; 
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
       color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, #0b1229, var(--bg));
       line-height:1.6;
     }
@@ -42,6 +42,7 @@
     .card.pad{padding:20px}
     .avatar-wrap{display:flex; align-items:center; gap:16px}
     .avatar{width:96px; height:96px; border-radius:50%; border:2px solid #1f2937; overflow:hidden; background:#0b1229}
+    .avatar img{width:100%; height:100%; object-fit:cover}
     .tag{display:inline-flex; align-items:center; gap:8px; border:1px solid #1f2937; color:var(--muted); padding:6px 10px; border-radius:999px; font-size:14px}
     .tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
     .btn{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #1f2937; background:#0b1229; color:var(--text)}
@@ -60,9 +61,8 @@
     .post .content{margin-top:8px}
 
     footer{padding:24px; text-align:center; color:var(--muted)}
-    .kbd{border:1px solid #334155; padding: 2px 6px; border-radius:6px; background:#0b1229; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .kbd{border:1px solid #334155; padding: 2px 6px; border-radius:6px; background:#0b1229; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}
 
-    /* Focus outline for a11y */
     :focus-visible{outline: 3px solid var(--accent); outline-offset: 2px}
   </style>
 </head>
@@ -86,20 +86,8 @@
       <!-- Lateral -->
       <aside aria-label="Perfil" class="card pad">
         <div class="avatar-wrap">
-          <div class="avatar" aria-hidden="true">
-            <img src="aida.png" alt="Foto de Aida" class="avatar"/>
-
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#22d3ee"/>
-                  <stop offset="100%" stop-color="#f59e0b"/>
-                </linearGradient>
-              </defs>
-              <rect width="120" height="120" fill="#0b1229"/>
-              <circle cx="60" cy="44" r="22" fill="url(#g)"/>
-              <rect x="22" y="70" width="76" height="36" rx="18" fill="url(#g)"/>
-              <text x="60" y="58" text-anchor="middle" font-size="22" font-weight="700" fill="#0b1020">A</text>
-            </svg>
+          <div class="avatar">
+            <img src="aida.png" alt="Foto de Aida" />
           </div>
           <div>
             <h1 style="margin-bottom:4px">Aida Laricchia</h1>
@@ -128,7 +116,6 @@
             <a class="btn" href="https://github.com/aidalaricchia2" target="_blank" rel="noreferrer noopener">🐙 GitHub</a>
           </p>
         </section>
-
       </aside>
 
       <!-- Principal / Posts -->
@@ -146,7 +133,6 @@
           </div>
         </article>
 
-        <!-- Modelo para nuevas entradas → Duplica este bloque y cambia el contenido/fecha/título -->
         <article class="post" hidden>
           <h3>
             Título de la entrada
