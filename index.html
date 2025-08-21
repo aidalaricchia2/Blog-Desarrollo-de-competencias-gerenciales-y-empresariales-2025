@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bitácora de Aprendizaje · Aida Laricchia</title>
+  <meta name="description" content="Bitácora de aprendizaje de Aida Laricchia: proyectos, reflexiones y objetivos." />
+  <meta name="author" content="Aida Laricchia" />
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --card:#111827ee; /* gray-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --accent:#22d3ee; /* cyan-400 */
+      --accent2:#f59e0b; /* amber-500 */
+      --ring: #22d3ee55;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; 
+      color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, #0b1229, var(--bg));
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky; top:0; backdrop-filter: blur(10px); background: #0b1020cc; border-bottom:1px solid #1f2937; z-index:10
+    }
+    .container{max-width:1000px; margin:0 auto; padding: 24px}
+    .nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .brand-logo{width:36px; height:36px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, var(--accent), var(--accent2)); color:#0b1020; font-weight:900}
+    .pill{border:1px solid #1f2937; padding:6px 10px; border-radius:999px; color:var(--muted)}
+
+    main{padding: 24px;}
+    .grid{display:grid; grid-template-columns: 1fr; gap:24px}
+    @media(min-width: 900px){ .grid{grid-template-columns: 320px 1fr} }
+
+    .card{background: linear-gradient(180deg, #0f172a, #0b1328); border:1px solid #1f2937; border-radius:20px; box-shadow: 0 10px 30px #00000055}
+    .card.pad{padding:20px}
+    .avatar-wrap{display:flex; align-items:center; gap:16px}
+    .avatar{width:96px; height:96px; border-radius:50%; border:2px solid #1f2937; overflow:hidden; background:#0b1229}
+    .tag{display:inline-flex; align-items:center; gap:8px; border:1px solid #1f2937; color:var(--muted); padding:6px 10px; border-radius:999px; font-size:14px}
+    .tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .btn{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid #1f2937; background:#0b1229; color:var(--text)}
+    .btn:hover{box-shadow:0 0 0 3px var(--ring)}
+
+    h1{font-size:clamp(24px, 2.4vw, 36px); margin: 0 0 8px}
+    h2{font-size:clamp(20px, 2vw, 28px); margin: 0 0 12px}
+    h3{font-size:clamp(18px, 1.8vw, 24px); margin: 0 0 10px}
+    p{color:#d1d5db}
+    small, time, .muted{color:var(--muted)}
+
+    .post{padding:24px; border-top:1px dashed #25304a}
+    .post:first-child{border-top:none}
+    .post h3{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
+    .post h3 .date{font-size:14px; font-weight:500; color:var(--muted)}
+    .post .content{margin-top:8px}
+
+    footer{padding:24px; text-align:center; color:var(--muted)}
+    .kbd{border:1px solid #334155; padding: 2px 6px; border-radius:6px; background:#0b1229; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    /* Focus outline for a11y */
+    :focus-visible{outline: 3px solid var(--accent); outline-offset: 2px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Inicio">
+        <div class="brand-logo" aria-hidden="true">AL</div>
+        <span>Bitácora de Aprendizaje · Aida Laricchia</span>
+      </div>
+      <nav>
+        <a class="pill" href="#inicio">Inicio</a>
+        <a class="pill" href="#entrada-1">Primera entrada</a>
+        <a class="pill" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <div class="grid">
+      <!-- Lateral -->
+      <aside aria-label="Perfil" class="card pad">
+        <div class="avatar-wrap">
+          <!-- ✨ Para usar una foto tuya, reemplaza el <svg> por <img src="ruta/tu-foto.jpg" alt="Foto de Aida" class="avatar"/> -->
+          <div class="avatar" aria-hidden="true">
+            <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Avatar de Aida">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#22d3ee"/>
+                  <stop offset="100%" stop-color="#f59e0b"/>
+                </linearGradient>
+              </defs>
+              <rect width="120" height="120" fill="#0b1229"/>
+              <circle cx="60" cy="44" r="22" fill="url(#g)"/>
+              <rect x="22" y="70" width="76" height="36" rx="18" fill="url(#g)"/>
+              <text x="60" y="58" text-anchor="middle" font-size="22" font-weight="700" fill="#0b1020">A</text>
+            </svg>
+          </div>
+          <div>
+            <h1 style="margin-bottom:4px">Aida Laricchia</h1>
+            <small>24 años · Estudiante de Ciencias de la Computación (UNCUYO, 4° año)</small>
+          </div>
+        </div>
+        <div class="tags" style="margin-top:16px">
+          <span class="tag">👩‍💻 Programación & Robótica (docente 2022–2025)</span>
+          <span class="tag">🍞 Emprendimiento de focaccias</span>
+          <span class="tag">📸 Fotografía</span>
+          <span class="tag">🧠 Aprendizaje continuo</span>
+        </div>
+        <hr style="border:none; border-top:1px solid #1f2937; margin:18px 0"/>
+        <section aria-label="Objetivos">
+          <h2>Objetivos a corto plazo</h2>
+          <ul>
+            <li>Rendir y aprobar finales pendientes.</li>
+            <li>Dar los primeros pasos laborales en el área de desarrollo/tecnología.</li>
+          </ul>
+        </section>
+        <hr style="border:none; border-top:1px solid #1f2937; margin:18px 0"/>
+        <section id="contacto" aria-label="Contacto">
+          <h2>Contacto</h2>
+          <p class="muted">Agregá tus enlaces cuando los tengas listos.</p>
+          <p>
+            <a class="btn" href="mailto:tu-email@ejemplo.com">📧 tu-email@ejemplo.com</a>
+            <a class="btn" href="https://github.com/tuusuario" target="_blank" rel="noreferrer noopener">🐙 GitHub</a>
+          </p>
+        </section>
+      </aside>
+
+      <!-- Principal / Posts -->
+      <section class="card" aria-label="Entradas de la bitácora">
+        <article id="entrada-1" class="post">
+          <h3>
+            Primera entrada
+            <span class="date"><time datetime="2025-08-21">21 de agosto de 2025</time></span>
+          </h3>
+          <div class="content">
+            <p>¡Hola! Soy Aida Laricchia. Tengo 24 años y estudio Ciencias de la Computación en la UNCUYO; actualmente estoy cursando 4° año. Entre 2022 y julio de 2025 trabajé como docente en colegios primarios, dando clases de programación y robótica. Es una experiencia que me ayudó a fortalecer la paciencia, la creatividad y la comunicación.</p>
+            <p>Más allá de lo académico, me apasiona la cocina y recientemente inicié un emprendimiento de <strong>focaccias</strong>. Le dedico sobre todo los fines de semana: amasar, fermentar, probar sabores y sacar fotos del proceso (sí, también me encanta la fotografía). Disfruto aprender cosas nuevas de manera constante.</p>
+            <p>¿Qué espero a corto plazo? <strong>Aprobar los finales que tengo pendientes</strong> y, después, comenzar a trabajar en el área para la que me estoy formando. Me entusiasma la idea de crecer en proyectos reales, seguir enseñando cuando pueda y documentar mi recorrido en esta bitácora.</p>
+            <p>En esta página voy a ir dejando notas de aprendizaje, pequeños proyectos, recursos útiles y reflexiones sobre cómo estudio y organizo mi tiempo. ¡Bienvenid@!</p>
+          </div>
+        </article>
+
+        <!-- Modelo para nuevas entradas → Duplica este bloque y cambia el contenido/fecha/título -->
+        <article class="post" hidden>
+          <h3>
+            Título de la entrada
+            <span class="date"><time datetime="2025-09-01">1 de septiembre de 2025</time></span>
+          </h3>
+          <div class="content">
+            <p>Contenido de ejemplo. Contá qué aprendiste, qué te costó y qué vas a intentar la próxima vez.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Hecho con ♥ por Aida · <span class="muted">Actualizado el 21/08/2025</span>
+    <div style="margin-top:6px" class="muted">Para editar, abrí <span class="kbd">index.html</span> y modificá el contenido.</div>
+  </footer>
+</body>
+</html>
